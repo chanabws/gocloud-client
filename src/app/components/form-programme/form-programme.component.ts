@@ -44,12 +44,12 @@ export class FormProgrammeComponent implements OnInit {
     //  LocalHost development..
     // this.httpClient.post('http://localhost:4903/api/email', formProgramme)
 
-    this.httpClient.post('http://point.sg.ibm.com:4903/api/email', formProgramme)
-      .toPromise()
-      .then(response => {
-        console.log(response);
-      })
-      .catch(console.log);
+    // this.httpClient.post('http://point.sg.ibm.com:4903/api/email', formProgramme)
+    //   .toPromise()
+    //   .then(response => {
+    //     console.log(response);
+    //   })
+    //   .catch(console.log);
 
     // formProgramme.reset();
     alert("Registration form submitted successful!")
