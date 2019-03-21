@@ -1,0 +1,137 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #formConsult="ngForm">
+    <!-- {{disgnostic}} -->
+
+    <!-- ***** Corporate Company Information ***** -->
+    <h6>*Corporate Company Information</h6>
+    <div class="card">
+      <div class="card-body" style="font-size:.85em;">
+
+        <div class="row">
+          <!-- Company Name -->
+          <div class="col-lg">
+            <div class="form-group">
+              <label for="companyName">Company Name</label>
+              <input type="text" class="form-control form-control-sm" id="companyName" required [(ngModel)]="model.companyName"
+                name="companyName" #companyName="ngModel" />
+              <!-- TODO: remove this: {{model.companyName}} -->
+              <div [hidden]="companyName.valid || companyName.pristine" class="alert alert-danger" style="margin-top:.5em;">
+                Company Name is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Registration License -->
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="regLicense">Company License Number</label>
+              <input type="number" class="form-control form-control-sm" id="regLicense" required [(ngModel)]="model.regLicense"
+                name="regLicense" #regLicense="ngModel" />
+              <div [hidden]="regLicense.valid || regLicense.pristine" class="alert alert-danger" style="margin-top:.5em;">
+                Company Registration License Number is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Registration Address -->
+          <!-- <div class="form-group">
+              <label for="regAddress">Company Registration Address</label>
+              <input type="text" class="form-control form-control-sm" id="regAddress" required
+                [(ngModel)]="model.regAddress" name="regAddress" #regAddress="ngModel" />
+              <div [hidden]="regAddress.valid || regAddress.pristine" class="alert alert-danger" style="margin-top:.5em;">
+                  Company Registration Address is required.
+              </div>
+            </div> -->
+
+          <div class="col-lg-3">
+            <!-- Company Industry -->
+            <div class="form-group">
+              <label for="industry">Industry</label>
+              <select class="form-control form-control-sm" id="industry" required>
+                <option *ngFor="let ind of industry" [value]="ind">{{ind}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <hr>
+
+    <!-- ***** Contact Information ***** -->
+    <h6>*Contact Person Information</h6>
+    <div class="card">
+      <div class="card-body" style="font-size:.85em;">
+
+        <div class="row">
+          <!-- Title -->
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <select class="form-control form-control-sm" id="title" required>
+                <option *ngFor="let tt of title" [value]="tt">{{tt}}</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Manager In-Charge -->
+          <div class="col-lg">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control form-control-sm" id="firstName" required [(ngModel)]="model.firstName"
+                name="firstName" #firstName="ngModel" />
+              <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger" style="margin-top:.5em;">
+                First Name is required.
+              </div>
+            </div>
+          </div>
+          <div class="col-lg">
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control form-control-sm" id="lastName" required [(ngModel)]="model.lastName"
+                name="lastName" #lastName="ngModel" />
+              <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger" style="margin-top:.5em;">
+                Last Name is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <!-- Contact -->
+            <div class="form-group">
+              <label for="contactNum">Mobile Number</label>
+              <input type="number" class="form-control form-control-sm" id="contactNum" required [(ngModel)]="model.contactNum"
+                name="contactNum" #contactNum="ngModel" />
+              <div [hidden]="contactNum.valid || contactNum.pristine" class="alert alert-danger" style="margin-top:.5em;">
+                Mobile Number is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg">
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control form-control-sm" id="email" required [(ngModel)]="model.email" name="email"
+                #email="ngModel" />
+              <div [hidden]="email.valid || email.pristine" class="alert alert-danger" style="margin-top:.5em;">
+                Email Address is required.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p><small>* All Fields are mandatory.</small></p>
+    <br>
+
+    <!-- <button type="submit" class="btn btn-outline-success">Consultation Appointment</button> -->
+    <button type="submit" class="btn btn-outline-success" [disabled]="!formConsult.form.valid">Consultation Appointment</button>
+    &nbsp;
+    <button type="button" class="btn btn-outline-primary" (click)="newForm()">Test Entries...</button>
+    <button type="button" class="btn btn-outline-primary" (click)="newForm(); formConsult.reset()">Reset Entries...</button>
+
+  </form>
+</div>

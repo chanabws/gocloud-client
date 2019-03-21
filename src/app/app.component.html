@@ -1,0 +1,45 @@
+<main>
+
+  <!-- Header -->
+  <div id="header">
+    <app-header></app-header>
+  </div>
+
+  <!--Router Outlet  -->
+  <!-- <router-outlet></router-outlet> -->
+
+  <!-- Home -->
+  <div id="home" style="background-color:rgba(176, 196, 222, 0.253);">
+    <app-home></app-home>
+  </div>
+
+  <!-- Introduction -->
+  <div id="intro" style="background-color:rgba(176, 196, 222, 0.253);">
+    <app-intro></app-intro>
+    <a routerLink="/header" fragment="header" routerLinkActive="active" class="nav-item nav-link my-2 my-sm-0" 
+      style="font-size:.9em; color:darkgrey;">Return to Top</a>
+    <hr>
+  </div>
+
+  <!-- Course  -->
+  <div id="course">
+    <app-course></app-course>
+    <a routerLink="/header" fragment="header" routerLinkActive="active" class="nav-item nav-link my-2 my-sm-0" 
+      style="font-size:.9em; color:darkgrey;">Return to Top</a>
+  </div>
+
+  <!-- Contact  -->
+  <div id="contact" style="margin-bottom:-1em; background-color:rgba(176, 196, 222, 0.253);">
+    <hr>
+    <app-contact></app-contact>
+    <a routerLink="/header" fragment="header" routerLinkActive="active" class="nav-item nav-link my-2 my-sm-0" 
+      style="font-size:.9em; color:darkgrey;">Return to Top</a>
+    <hr>
+  </div>
+
+  <!-- Footer -->
+  <div>
+    <app-footer></app-footer>
+  </div>
+
+</main>
