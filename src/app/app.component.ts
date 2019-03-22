@@ -26,13 +26,6 @@ export class AppComponent implements OnInit {
       }
     });
 
-    // // Email API
-    // this.formService.getForms().subscribe((res)=>{
-    //   this.formService.getForms().subscribe((res) => {
-    //     // console.log(res.body);  ??
-    //   })
-    // });
-
   }
     
 }

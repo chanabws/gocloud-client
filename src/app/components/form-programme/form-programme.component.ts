@@ -21,38 +21,8 @@ export class FormProgrammeComponent implements OnInit {
 
   submitted = false;
 
-  // ** Synchronous signature method
-  // getForms(): void {
-  //   this.forms = this.formService.getForms();
-  // }
-
-  // ** Observable Asynchronous signature method
-  // getForms(): void {
-  //   this.formService.getForms()
-  //     .subscribe(data => {this.forms = data; console.log(data)});
-  // }
-
-  // submitForm(formdata): void {
-  //   this.formService.submitForm(formdata)
-  //     .subscribe(data => {formdata = data; console.log("submitform: " +formdata)});
-  // }
-  
-
   submitForm(formProgramme) {
-    console.log(formProgramme);
-    // const headers = new HttpHeaders().set('Content-type', 'application/json');
-    //  LocalHost development..
-    // this.httpClient.post('http://localhost:4903/api/email', formProgramme)
-
-    // this.httpClient.post('http://point.sg.ibm.com:4903/api/email', formProgramme)
-    //   .toPromise()
-    //   .then(response => {
-    //     console.log(response);
-    //   })
-    //   .catch(console.log);
-
-    // formProgramme.reset();
-    alert("Registration form submitted successful!")
+    console.log(formProgramme);alert("Thank You!<br>Registration form has been submitted successful!<br>You would be contacted soon. ")
   }
 
 
